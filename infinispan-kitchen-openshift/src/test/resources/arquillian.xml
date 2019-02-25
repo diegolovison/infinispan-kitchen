@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="
+        http://jboss.org/schema/arquillian
+        http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <extension qualifier="openshift">
+        <!--
+        <property name="namespace.use.current">false</property>
+        <property name="namespace.use.existing">infinispan-openshift-demo</property>
+        -->
+        <property name="kubernetes.master">https://192.168.99.100:8443</property>
+        <!-- oc whoami -t -->
+        <property name="cube.auth.token">zhW_YGWjGD8eUWXsorHI5P47vPXytVOA6h0tsmuXUFU</property>
+    </extension>
+
+</arquillian>

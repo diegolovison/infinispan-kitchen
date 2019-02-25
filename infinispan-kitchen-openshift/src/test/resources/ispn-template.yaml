@@ -1,0 +1,110 @@
+# https://github.com/jboss-dockerfiles/infinispan/blob/master/server/docker-entrypoint.sh
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: DeploymentConfig
+    metadata:
+      labels:
+        app: infinispan-server
+      name: infinispan-server
+    spec:
+      replicas: 1
+      selector:
+        app: infinispan-server
+        deploymentconfig: infinispan-server
+      template:
+        metadata:
+          labels:
+            app: infinispan-server
+            deploymentconfig: infinispan-server
+        spec:
+          containers:
+            - env:
+                - name: MGMT_USER
+                  value: mgmtUser
+                - name: MGMT_PASS
+                  value: mgmtPwd
+                - name: APP_USER
+                  value: user
+                - name: APP_PASS
+                  value: pwd
+              image: 'jboss/infinispan-server:9.4.6.Final'
+              imagePullPolicy: Always
+              name: infinispan-server
+              ports:
+                - containerPort: 8181
+                  protocol: TCP
+                - containerPort: 8888
+                  protocol: TCP
+                - containerPort: 9990
+                  protocol: TCP
+                - containerPort: 11211
+                  protocol: TCP
+                - containerPort: 11222
+                  protocol: TCP
+                - containerPort: 57600
+                  protocol: TCP
+                - containerPort: 7600
+                  protocol: TCP
+                - containerPort: 8080
+                  protocol: TCP
+              terminationMessagePath: /dev/termination-log
+          restartPolicy: Always
+      triggers:
+        - type: ConfigChange
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      labels:
+        app: infinispan-server
+      name: infinispan-server
+    spec:
+      ports:
+        - name: 7600-tcp
+          port: 7600
+          protocol: TCP
+          targetPort: 7600
+        - name: 8080-tcp
+          port: 8080
+          protocol: TCP
+          targetPort: 8080
+        - name: 8181-tcp
+          port: 8181
+          protocol: TCP
+          targetPort: 8181
+        - name: 8888-tcp
+          port: 8888
+          protocol: TCP
+          targetPort: 8888
+        - name: 9990-tcp
+          port: 9990
+          protocol: TCP
+          targetPort: 9990
+        - name: 11211-tcp
+          port: 11211
+          protocol: TCP
+          targetPort: 11211
+        - name: 11222-tcp
+          port: 11222
+          protocol: TCP
+          targetPort: 11222
+        - name: 57600-tcp
+          port: 57600
+          protocol: TCP
+          targetPort: 57600
+      selector:
+        app: infinispan-server
+        deploymentconfig: infinispan-server
+  - apiVersion: v1
+    kind: Route
+    metadata:
+      name: infinispan-server
+    spec:
+      path: "/"
+      port:
+        targetPort: 11222
+      to:
+        kind: Service
+        name: infinispan-server
+kind: List
+metadata: {}
