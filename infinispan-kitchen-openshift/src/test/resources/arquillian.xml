@@ -11,8 +11,8 @@
         <property name="namespace.use.existing">infinispan-openshift-demo</property>
         -->
         <property name="kubernetes.master">https://192.168.99.100:8443</property>
-        <!-- oc whoami -t -->
-        <property name="cube.auth.token">zhW_YGWjGD8eUWXsorHI5P47vPXytVOA6h0tsmuXUFU</property>
+        <!-- oc whoami -t TODO -->
+        <property name="cube.auth.token">zgVG9Kq5I9vi7ATuMzdEf5VV-tyerIU_Dl7DCL9vLMc</property>
     </extension>
 
 </arquillian>

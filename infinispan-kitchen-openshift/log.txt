@@ -1,0 +1,142 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.github.diegolovison:infinispan-kitchen-openshift:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ com.github.diegolovison:infinispan-kitchen:1.0-SNAPSHOT, /Users/dlovison/Documents/GitHub/diego-kitchen/infinispan-kitchen/pom.xml, line 27, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------< com.github.diegolovison:infinispan-kitchen-openshift >--------
+[INFO] Building infinispan-kitchen-openshift 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ infinispan-kitchen-openshift ---
+[INFO] Deleting /Users/dlovison/Documents/GitHub/diego-kitchen/infinispan-kitchen/infinispan-kitchen-openshift/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ infinispan-kitchen-openshift ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ infinispan-kitchen-openshift ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ infinispan-kitchen-openshift ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ infinispan-kitchen-openshift ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/dlovison/Documents/GitHub/diego-kitchen/infinispan-kitchen/infinispan-kitchen-openshift/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ infinispan-kitchen-openshift ---
+[INFO] Surefire report directory: /Users/dlovison/Documents/GitHub/diego-kitchen/infinispan-kitchen/infinispan-kitchen-openshift/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+CubeKubernetesConfiguration: 
+  namespace = itest-e5dcdd24
+  master.url = https://192.168.99.100:8443
+  namespace.lazy.enabled = true
+  namespace.cleanup.enabled = true
+  namespace.cleanup.timeout = 0
+  namespace.cleanup.confirm.enabled = false
+  namespace.destroy.enabled = true
+  namespace.destroy.confirm.enabled = false
+  namespace.destroy.timeout = 0
+  wait.enabled = true
+  wait.timeout = 480000
+  wait.poll.interval = 5000
+  ansi.logger.enabled = true
+  env.init.enabled = true
+  logs.copy = false
+  cube.api.version = v1
+  cube.auth.token = zgVG9Kq5I9vi7ATuMzdEf5VV-tyerIU_Dl7DCL9vLMc
+  cube.trust.certs = true
+  cube.fmp.build = false
+  cube.fmp.build.disable.for.mvn = false
+  cube.fmp.pom.path = pom.xml
+  cube.fmp.debug.output = false
+  cube.fmp.logs = true
+  cube.fmp.build.options = 
+
+CubeOpenShiftConfiguration: 
+  keepAliveGitServer = false
+  autoStartContainers = []
+  proxiedContainerPorts = []
+  portForwardBindAddress = 127.0.0.1
+  openshiftRouterHttpPort = 80
+  openshiftRouterHttpsPort = 443
+  enableImageStreamDetection = true
+  routerSniPort = 443
+  templateProcess = true
+  startupTimeout = 600
+  httpClientTimeout = 120
+  awaitRouteRepetitions = 1
+
+Initializing Session:e5dcdd24
+Using Kubernetes at: https://192.168.99.100:8443/
+Creating project: itest-e5dcdd24
+To switch to the new project: oc project itest-e5dcdd24
+Did not find any kubernetes/openshift configuration files before starting the test execution. If you are using fabric8-maven-plugin, ensure `mvn package fabric8:resource fabric8:build` is run first to generate the resources.
+Feb 26, 2019 11:38:32 AM org.arquillian.cube.kubernetes.impl.resources.KubernetesResourcesApplier applyKubernetesResourcesAtClassScope
+INFO: Creating environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest
+Feb 26, 2019 11:38:32 AM org.arquillian.cube.openshift.impl.CEEnvironmentProcessor createEnvironment
+INFO: Creating environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest
+Feb 26, 2019 11:38:32 AM org.arquillian.cube.openshift.impl.resources.TemplateProcessor processTemplate
+WARNING: Empty labels for template: file:/Users/dlovison/Documents/GitHub/diego-kitchen/infinispan-kitchen/infinispan-kitchen-openshift/target/test-classes/ispn-template.yaml, namespace: itest-e5dcdd24
+Feb 26, 2019 11:38:32 AM org.arquillian.cube.openshift.impl.resources.TemplateProcessor processTemplate
+INFO: Applying OpenShift template: file:/Users/dlovison/Documents/GitHub/diego-kitchen/infinispan-kitchen/infinispan-kitchen-openshift/target/test-classes/ispn-template.yaml
+Feb 26, 2019 11:38:32 AM org.arquillian.cube.kubernetes.impl.resources.KubernetesResourcesApplier applyKubernetesResourcesAtMethodScope
+INFO: Creating environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest method testCustomerRoute
+Feb 26, 2019 11:38:32 AM org.arquillian.cube.openshift.impl.CEEnvironmentProcessor createOpenShiftResource
+INFO: Creating environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest method public void com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest.testCustomerRoute()
+Feb 26, 2019 11:38:56 AM org.infinispan.client.hotrod.RemoteCacheManager start
+INFO: ISPN004021: Infinispan version: 9.4.6.Final
+Feb 26, 2019 11:38:57 AM org.infinispan.client.hotrod.RemoteCacheManager start
+INFO: ISPN004021: Infinispan version: 9.4.6.Final
+Feb 26, 2019 11:38:57 AM org.arquillian.cube.kubernetes.impl.resources.KubernetesResourcesApplier removeKubernetesResourcesAtMethodScope
+INFO: Deleting environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest method testCustomerRoute
+Feb 26, 2019 11:38:57 AM org.arquillian.cube.openshift.impl.CEEnvironmentProcessor deleteOpenShiftResource
+INFO: Deleting environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest method testCustomerRoute
+Feb 26, 2019 11:38:57 AM org.arquillian.cube.kubernetes.impl.resources.KubernetesResourcesApplier applyKubernetesResourcesAtMethodScope
+INFO: Creating environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest method testCustomerRoute
+Feb 26, 2019 11:38:57 AM org.arquillian.cube.openshift.impl.CEEnvironmentProcessor createOpenShiftResource
+INFO: Creating environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest method public void com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest.testCustomerRoute()
+Feb 26, 2019 11:38:57 AM org.infinispan.client.hotrod.RemoteCacheManager start
+INFO: ISPN004021: Infinispan version: 9.4.6.Final
+Feb 26, 2019 11:38:58 AM org.infinispan.client.hotrod.RemoteCacheManager start
+INFO: ISPN004021: Infinispan version: 9.4.6.Final
+Feb 26, 2019 11:38:58 AM org.arquillian.cube.kubernetes.impl.resources.KubernetesResourcesApplier removeKubernetesResourcesAtMethodScope
+INFO: Deleting environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest method testCustomerRoute
+Feb 26, 2019 11:38:58 AM org.arquillian.cube.openshift.impl.CEEnvironmentProcessor deleteOpenShiftResource
+INFO: Deleting environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest method testCustomerRoute
+Feb 26, 2019 11:38:58 AM org.arquillian.cube.kubernetes.impl.resources.KubernetesResourcesApplier removeKubernetesResourcesAtClassScope
+INFO: Deleting environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest
+Feb 26, 2019 11:38:58 AM org.arquillian.cube.openshift.impl.resources.OpenShiftResourceFactory deleteEnvironment
+INFO: Deleting environment for com.diegolovison.github.infinispan.kitchen.openshift.HotRodInsecureClientTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.883 sec
+Deleting project: itest-e5dcdd24...
+Project: itest-e5dcdd24, successfully deleted
+Destroying Session:e5dcdd24
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ infinispan-kitchen-openshift ---
+[INFO] Building jar: /Users/dlovison/Documents/GitHub/diego-kitchen/infinispan-kitchen/infinispan-kitchen-openshift/target/infinispan-kitchen-openshift-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 33.760 s
+[INFO] Finished at: 2019-02-26T11:38:59-03:00
+[INFO] ------------------------------------------------------------------------

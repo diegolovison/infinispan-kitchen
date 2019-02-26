@@ -29,6 +29,7 @@ items:
                 - name: APP_PASS
                   value: pwd
               image: 'jboss/infinispan-server:9.4.6.Final'
+              args: ["custom/custom-clustered.xml"]
               imagePullPolicy: Always
               name: infinispan-server
               ports:
@@ -49,7 +50,19 @@ items:
                 - containerPort: 8080
                   protocol: TCP
               terminationMessagePath: /dev/termination-log
+              volumeMounts:
+                - mountPath: /opt/jboss/infinispan-server/standalone/configuration/custom
+                  name: ispn-configs
+                - mountPath: /opt/jboss/infinispan-server/standalone/configuration/ssl
+                  name: keystore-configs
           restartPolicy: Always
+          volumes:
+          - configMap:
+              name: custom-clustered
+            name: ispn-configs
+          - configMap:
+              name: keystore-server
+            name: keystore-configs
       triggers:
         - type: ConfigChange
   - apiVersion: v1
@@ -98,11 +111,23 @@ items:
   - apiVersion: v1
     kind: Route
     metadata:
-      name: infinispan-server
+      name: hotrod-router
+    spec:
+      port:
+        targetPort: 11222
+      to:
+        kind: Service
+        name: infinispan-server
+      tls:
+        termination: passthrough
+  - apiVersion: v1
+    kind: Route
+    metadata:
+      name: rest-router
     spec:
       path: "/"
       port:
-        targetPort: 11222
+        targetPort: 8080
       to:
         kind: Service
         name: infinispan-server
