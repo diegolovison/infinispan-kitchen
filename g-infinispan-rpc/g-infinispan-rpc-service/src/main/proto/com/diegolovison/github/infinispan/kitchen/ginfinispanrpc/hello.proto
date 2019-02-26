@@ -6,7 +6,7 @@ package ginfinispanrpc; // proto packages are not expected to start with reverse
 
 // service contract
 service HelloService {
-    rpc hello(HelloRequest) returns (HelloResponse);
+    rpc hello(stream HelloRequest) returns (stream HelloResponse);
 }
 
 // request payload
