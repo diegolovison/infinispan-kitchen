@@ -12,7 +12,7 @@ public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
 
    @Override
    public StreamObserver<HelloRequest> hello(StreamObserver<HelloResponse> responseObserver) {
-      return new StreamObserver<HelloRequest>() {
+      return new StreamObserver<>() {
 
          @Override
          public void onNext(HelloRequest request) {

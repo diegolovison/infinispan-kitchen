@@ -1,0 +1,23 @@
+syntax = "proto3"; // what syntax is used
+option java_multiple_files = true; // everything will be generated in individual files
+option java_package = "com.diegolovison.github.infinispan.kitchen.ginfinispanrpc"; // package we want to use for our generated Java classes. If we generate code in another language from this .proto, the java_package option has no effect.
+option java_outer_classname = "CacheProto";
+package ginfinispanrpc; // proto packages are not expected to start with reverse domain names
+
+// service contract
+service CacheService {
+    rpc put(stream CacheRequest) returns (stream CacheResponse);
+    rpc get(stream CacheRequest) returns (stream CacheResponse);
+}
+
+// request payload
+message CacheRequest {
+    string name = 1;
+    string key = 2;
+    string value = 3;
+}
+
+// response payload
+message CacheResponse {
+    string value = 1;
+}

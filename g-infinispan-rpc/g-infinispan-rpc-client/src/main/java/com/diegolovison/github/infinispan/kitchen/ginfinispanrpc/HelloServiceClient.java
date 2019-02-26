@@ -16,7 +16,7 @@ public class HelloServiceClient {
 
    public static void main(String[] args) throws InterruptedException {
 
-      ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080)
+      ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8088)
             .usePlaintext()
             .build();
 

@@ -17,5 +17,18 @@
             <artifactId>g-infinispan-rpc-service</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-core</artifactId>
+            <version>${version.infinispan}</version>
+        </dependency>
+        <!--
+        https://github.com/Netflix/concurrency-limits
+        <dependency>
+            <groupId>com.netflix.concurrency-limits</groupId>
+            <artifactId>concurrency-limits-grpc</artifactId>
+            <version>${version.concurrency.limits.grpc}</version>
+        </dependency>
+        -->
     </dependencies>
 </project>

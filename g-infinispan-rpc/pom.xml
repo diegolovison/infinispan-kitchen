@@ -15,6 +15,7 @@
     <properties>
         <version.grpc>1.16.1</version.grpc>
         <version.javax.annotation>1.3.2</version.javax.annotation>
+        <version.concurrency.limits.grpc>0.1.13</version.concurrency.limits.grpc>
     </properties>
 
     <modules>

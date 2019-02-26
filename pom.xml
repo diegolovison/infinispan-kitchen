@@ -14,11 +14,10 @@
     <packaging>pom</packaging>
 
     <properties>
-        <version.java>1.8</version.java>
+        <version.java>11</version.java>
 
         <version.arquillian.cube>1.18.2</version.arquillian.cube>
         <version.jboss.arquillian>1.4.1.Final</version.jboss.arquillian>
-        <version.junit.container>1.4.1.Final</version.junit.container>
         <version.openshift.client>4.1.2</version.openshift.client>
         <version.infinispan>9.4.6.Final</version.infinispan>
     </properties>
