@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>infinispan-kitchen-openshift</module>
+        <module>g-infinispan-rpc</module>
     </modules>
     <packaging>pom</packaging>
 
